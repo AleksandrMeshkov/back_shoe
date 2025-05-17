@@ -19,11 +19,10 @@ async def register(
 
 @router.post("/token")
 async def login(
-    form_data: OAuth2PasswordRequestForm = Depends(),
+    auth_data: UserAuth,
     session: AsyncSession = Depends(get_session)
 ):
     user_service = UserService(session)
-    auth_data = UserAuth(Login=form_data.username, Password=form_data.password)
     user = await user_service.authenticate(auth_data)
     return user
 
