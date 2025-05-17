@@ -35,7 +35,7 @@ class ProductService:
             with open(file_path, "wb") as buffer:
                 content = await file.read()
                 buffer.write(content)
-            return f"http://212.20.53.169:13299/uploads/products/{filename}"
+            return f"http://212.20.53.169:1211/uploads/products/{filename}"
         except Exception as e:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

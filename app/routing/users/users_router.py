@@ -52,7 +52,7 @@ async def update_user(
     if photo_file:
         try:
             file_name = await UserService.save_uploaded_file(photo_file)
-            full_photo_url = f"http://212.20.53.169:13299/uploads/{file_name}"
+            full_photo_url = f"http://212.20.53.169:1211/uploads/{file_name}"
             update_data["Photo"] = full_photo_url
         except Exception as e:
             return JSONResponse(
